@@ -20,6 +20,9 @@ class Paciente extends Persona {
     	$this -> foto = $urlFoto;
     }
     
+    function setEstado($estadoA){
+        $this -> estado = $estadoA; 
+    }
     function getEstado(){
         return $this -> estado;
     }
@@ -124,6 +127,12 @@ class Paciente extends Persona {
     		$this -> conexion -> cerrar();
     		return false;
     	}
+    }
+    
+    function actualizarEstado(){
+        $this -> conexion -> abrir();
+        $this -> conexion -> ejecutar($this -> pacienteDAO ->actualizarEstado());
+        $this -> conexion -> cerrar();
     }
     
 }

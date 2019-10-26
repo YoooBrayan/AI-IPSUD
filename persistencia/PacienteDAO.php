@@ -73,6 +73,12 @@ class PacienteDAO {
     	return "select idPaciente from Paciente
                 where correo = '" . $this -> correo . "' and clave = md5('" . $this -> clave . "')";
     }
+
+    function actualizarEstado(){
+        return "update paciente set
+                estado = '" . $this -> estado . "'
+                where idpaciente=" . $this -> id;
+    }
     
 }
 
