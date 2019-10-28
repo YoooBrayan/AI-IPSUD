@@ -9,10 +9,10 @@ $mensaje = "";
 if(isset($_POST["actualizar"])){
 
 	$nombre = $_FILES['foto']['name'];
-    $tamaño = $_FILES['foto']['size'];
+    $tamaï¿½o = $_FILES['foto']['size'];
     $tipo = $_FILES['foto']['type'];
     
-    if($tamaño <= 1000000)
+    if($tamaï¿½o <= 1000000)
     {
     	if(strpos($tipo, "jpg") || strpos($tipo, "jpeg") || strpos($tipo, "png"))
     	{
@@ -27,10 +27,11 @@ if(isset($_POST["actualizar"])){
     		 
     		$tipoI = explode('/', $tipo); //separar cadena cuado encuentre un /. Metodo para obtener tipo de imagen
 
-    		$destino = $_SERVER['DOCUMENT_ROOT'] . '/ipsud_Yo/fotos/';
-    		move_uploaded_file($_FILES['foto']['tmp_name'], $destino . $_GET['idPaciente'] . '.' . $tipoI[1]); // Se envia al servidor con el nombre modificada en el idPaciente y el tipo de imagen
+			$destino = $_SERVER['DOCUMENT_ROOT'] . '/ipsud_Yo/fotos/';
+			move_uploaded_file($_FILES['foto']['tmp_name'], $destino . date("jnYhis") . $_GET['idPaciente'] . '.' . $tipoI[1]);
+			 // Se envia al servidor con el nombre modificada en el idPaciente y el tipo de imagen
 
-    		$paciente = new Paciente($_GET["idPaciente"], "", "", "", "", "", "", "", "", $_GET['idPaciente'].'.'.$tipoI[1]);
+    		$paciente = new Paciente($_GET["idPaciente"], "", "", "", "", "", "", "", "", date("jnYhis") . $_GET['idPaciente'].'.'.$tipoI[1]);
     		$paciente -> actualizarFoto();
             $mensaje = 'Foto del paciente actualizada exitosamente.';
     	}else{
@@ -60,7 +61,7 @@ if(isset($_POST["actualizar"])){
 						echo "<div class='alert alert-success role='alert'> " .
 							  $mensaje . "
 						</div>";						
-						 } else { 
+						 } else if(isset($_POST["actualizar"])) { 
                             
                         echo "<div class='alert alert-danger' role='alert'> " .
                               $mensaje  . "
