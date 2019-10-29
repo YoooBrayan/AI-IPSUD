@@ -33,7 +33,7 @@ include 'presentacion/menuAdministrador.php';
         echo "<td>" . $p->getNombre() . "</td>";
         echo "<td>" . $p->getApellido() . "</td>";
         echo "<td>" . $p->getCorreo() . "</td>";
-        echo "<td id='estado" . $p->getId() . "' ><span id='estado' value='". $p -> getEstado() ."' class='fas " . ($p->getEstado()==0?"fa-times-circle":"fa-check-circle") . "' data-toggle='tooltip' class='tooltipLink' data-placement='left' data-original-title='" . ($p->getEstado()==0?"Inhabilitado":"Habilitado") . "' ></span>" . "</td>";
+        echo "<td id='estado" . $p->getId() . "' ><span id='estadoS" . $p->getId() . "' value='". $p -> getEstado() ."' class='fas " . ($p->getEstado()==0?"fa-times-circle":"fa-check-circle") . "' data-toggle='tooltip' class='tooltipLink' data-placement='left' data-original-title='" . ($p->getEstado()==0?"Inhabilitado":"Habilitado") . "' ></span>" . "</td>";
         echo "<td>" . $p->getTelefono() . "</td>";
         echo "<td>" . $p->getDireccion() . "</td>";
         echo "<td id='cambiarEstados'>" . "<a href='modalPaciente.php?idPaciente=" . $p->getId() . "' data-toggle='modal' data-target='#modalPaciente' ><span class='fas fa-eye' data-toggle='tooltip' class='tooltipLink' data-placement='left' data-original-title='Ver Detalles' ></span> </a>
@@ -85,8 +85,12 @@ $(document).on('click', '#cambiarEstado<?php echo $p -> getId(); ?>', function()
 
 	var elemento = $(this)[0].parentElement.parentElement;
 	var id = $(elemento).attr('id');
-	var est = $("#estado").attr('value');
-	<?php  echo "var ruta = \"index.php?pid=" . base64_encode("presentacion/paciente/editarEstadoPacienteAjax.php") . "\";\n"; ?>
+	<?php  echo "var ide = \" ". $p -> getId() . " 	\";\n"; ?>
+	var idd = "#estadoS"+id;
+	var est = $(idd).attr('value');
+	console.log(est);
+	
+	<?php  echo "var ruta = \"index.php?pid=" . base64_encode("presentacion/paciente/editarEstadoPacienteAjax.php") . " \";\n"; ?>
 	
 	$.post(ruta, {id}, function(response){
 		var e = "#estado" + id;

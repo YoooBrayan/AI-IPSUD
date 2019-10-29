@@ -8,7 +8,7 @@ if(isset($_POST['id'])){
 	$paciente -> actualizarEstado();
 	$paciente -> consultar();
 
-	echo "<td  id='estado" . $paciente -> getId() . "' ><span id='estado' value='". $paciente -> getEstado() ."' class='fas " . ($paciente -> getEstado()==0?"fa-times-circle":"fa-check-circle") . "' data-toggle='tooltip' class='tooltipLink' data-placement='left' data-original-title='" . ($paciente -> getEstado()==0?"Inhabilitado":"Habilitado") . "' ></span>" . "</td>";
+	echo "<td  id='estado" . $paciente -> getId() . "' ><span id='estadoS" . $paciente->getId() . "' value='". $paciente -> getEstado() ."' class='fas " . ($paciente -> getEstado()==0?"fa-times-circle":"fa-check-circle") . "' data-toggle='tooltip' class='tooltipLink' data-placement='left' data-original-title='" . ($paciente -> getEstado()==0?"Inhabilitado":"Habilitado") . "' ></span>" . "</td>";
 	
 }
 
