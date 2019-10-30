@@ -85,10 +85,8 @@ $(document).on('click', '#cambiarEstado<?php echo $p -> getId(); ?>', function()
 
 	var elemento = $(this)[0].parentElement.parentElement;
 	var id = $(elemento).attr('id');
-	<?php  echo "var ide = \" ". $p -> getId() . " 	\";\n"; ?>
-	var idd = "#estadoS"+id;
-	var est = $(idd).attr('value');
-	console.log(est);
+	//var idd = "#estadoS"+id;
+	var est = $("#estadoS"+id).attr('value');
 	
 	<?php  echo "var ruta = \"index.php?pid=" . base64_encode("presentacion/paciente/editarEstadoPacienteAjax.php") . " \";\n"; ?>
 	

@@ -34,6 +34,8 @@ $mensaje = "";
 <script>
 function actualizarFoto(){
 	var parametros = new FormData($("#actualizarFoto")[0]);
+	var id = <?php echo  $_GET['idPaciente']; ?>;
+	parametros.append("idPaciente", id);	
 
 	<?php  echo "var ruta = \"index.php?pid=" . base64_encode("presentacion/paciente/actualizarFotoPacienteAjax.php") . "\";\n"; ?>
 
