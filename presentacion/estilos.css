@@ -24,7 +24,7 @@
     color: #000;
     padding: 10px;
     border-radius: 0px;
-    text-align: center;
+    text-align: left;
 }
 
 .login ul li .anS {
@@ -42,7 +42,7 @@
     color: #000;
     padding: 10px;
     border-radius: 0px;
-    text-align: center;
+    text-align: left;
 }
 
 .login ul li .ani:hover

@@ -93,7 +93,7 @@ $(document).on('click', '#cambiarEstado<?php echo $p -> getId(); ?>', function()
 	$.post(ruta, {id}, function(response){
 		var e = "#estado" + id;
 		$(e).html(response);
-		alert((est==0?"paciente " + "<?php echo ''.$p -> getNombre(); ?>" + " Habilitado":"Paciente " + id + " Inhabilitado"));
+		alert((est==0?"paciente " + "<?php echo ''.$p -> getNombre(); ?>" + " ha sido Habilitado":"Paciente " + id + " ha sido Inhabilitado"));
 		
 	})
 	
