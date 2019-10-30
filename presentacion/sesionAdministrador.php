@@ -17,3 +17,5 @@ include 'presentacion/menuAdministrador.php';
 		</div>
 	</div>
 </div>
+
+</main>

@@ -1,4 +1,3 @@
-
 .login{
     padding: 0px;
 }
@@ -13,7 +12,7 @@
     display: block;
     padding: 0px 0px;
     text-decoration: none;
-    color: #fff;
+    color: #8F8E8E;
     padding: 5px 10px;
     border-radius: 5px;
     margin-right: 0px;
@@ -62,9 +61,8 @@
     background: rgba(255,255,255,0.5);
     min-width: 150px;
     position: absolute;
-    margin-top: 9px;
+    margin-top: 0px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    transition: .5s;
     opacity: 0;
     visibility: hidden;
     transform: translateY(50px);
@@ -94,11 +92,4 @@
     background: #DADCDE;
     color: #000;
     text-decoration: none;
-}
-
-section{
-    width: 100%;
-    height: 100vh;
-    background: url(lunaM.jpg);
-    background-size: cover;
 }
