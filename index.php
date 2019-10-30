@@ -8,6 +8,7 @@ static $fotos = '/IPSUD_Yo/fotos/';
 
 ?>
 <head>
+<link href="estilos.css" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet"
