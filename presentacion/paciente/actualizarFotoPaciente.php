@@ -45,11 +45,18 @@ function actualizarFoto(){
 		type: "POST",
 		contentType: false,
 		processData: false,
-		beforesend: function(){
+		beforeSend: function(){
+			$('#mensaje').prepend('<img src="img/loader.gif" />')
 
 		},
 		success: function(response){
-			$("#mensaje").html(response);
+
+			$('#mensaje').fadeOut("fast", function(){
+				$("#mensaje").html(response);
+			});
+
+			$("#mensaje").fadeIn("slow");
+			
 		}
 	});
 
