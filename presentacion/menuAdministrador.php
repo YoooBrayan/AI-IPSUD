@@ -12,13 +12,13 @@
 
 					<ul>
 						<li>
-							<a class="ani" href="#">
+							<a href="#">
 								Administrador
 							</a>
 						</li>
-						<li><a class="an" href="index.php?pid=<?php echo base64_encode("presentacion/paciente/consultarPaciente.php") ?>">Paciente</a>
+						<li><a href="index.php?pid=<?php echo base64_encode("presentacion/paciente/consultarPaciente.php") ?>">Paciente</a>
 						</li>
-						<li><a class="an" href="#">Medico</a></li>
+						<li><a href="#">Medico</a></li>
 					</ul>
 			</ul>
 		</div>

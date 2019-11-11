@@ -56,6 +56,8 @@ include 'presentacion/menuAdministrador.php';
 <div>
 
 
+// .fade para darle efecto al modal, .modal-lg es el tamaño del modal
+
 <div class="modal fade" id="modalPaciente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content" id="modalContent"></div>
@@ -69,13 +71,6 @@ include 'presentacion/menuAdministrador.php';
 	});
 </script>
 
-
-<script>
-	$('body').on('show.bs.modal', '.modal', function (e) {
-		var link = $(e.relatedTarget);
-		$(this).find(".modal-content").load(link.attr("href"));
-	});
-</script>
 
 <script type="text/javascript">
 <?php foreach ($pacientes as $p) { ?>

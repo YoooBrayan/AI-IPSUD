@@ -1,7 +1,7 @@
 <?php
 // require 'logica/Persona.php';
 // require 'logica/Administrador.php';
-require_once 'logica/Paciente.php';
+//require_once 'logica/Paciente.php';
 $correo = $_POST["correo"];
 $clave = $_POST["clave"];
 $administrador = new Administrador("", "", "", $correo, $clave);

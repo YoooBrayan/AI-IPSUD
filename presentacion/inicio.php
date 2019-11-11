@@ -1,6 +1,6 @@
 	<div class="container">
 		<div class="row">
-		<?php include 'encabezado.php';?>
+			<?php include 'encabezado.php'; ?>
 		</div>
 		<div class="row">
 			<div class="col-8">
@@ -15,12 +15,11 @@
 				<div class="card">
 					<div class="card-header bg-primary text-white">Autenticacion</div>
 					<div class="card-body">
-					
-					<?php if(isset($_GET['di']))
-		{
-			echo "<div class='alert alert-danger' role='alert'>". "Datos Incorrectos" . " </div>";
-		}?>
-					
+
+						<?php if (isset($_GET['di'])) {
+							echo "<div class='alert alert-danger' role='alert'>" . "Datos Incorrectos" . " </div>";
+						} ?>
+
 						<form action="index.php?pid=<?php echo base64_encode("presentacion/autenticar.php") ?>&nos=true" method="post">
 							<div class="form-group">
 								<input type="email" name="correo" class="form-control" placeholder="Correo" required="required">
@@ -30,7 +29,7 @@
 							</div>
 							<button type="submit" class="btn btn-primary">Autenticar</button>
 						</form>
-						<a href=<?php echo "index.php?pid=" . base64_encode("presentacion/registro.php") . "&nos=true" ?>>Registrese Gratis</a>	
+						<a href=<?php echo "index.php?pid=" . base64_encode("presentacion/registro.php") . "&nos=true" ?>>Registrese Gratis</a>
 					</div>
 				</div>
 			</div>

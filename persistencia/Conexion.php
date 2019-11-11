@@ -1,9 +1,11 @@
 <?php
 class Conexion {
+
     private $mysqli;
     private $resultado;
+    
     public function abrir(){
-        //$this -> mysqli = new mysqli(servidor, usuario, contraseña, bd, puerto);
+        //$this -> mysqli = new mysqli(servidor, usuario, contraseï¿½a, bd, puerto);
         $this -> mysqli = new mysqli("localhost", "root", "ROCKY13.soloyo13.", "ipsud", 3306);
         $this -> mysqli -> set_charset("utf8");
     }
